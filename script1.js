@@ -88,7 +88,7 @@ function ejemplo7(){
 
 //ejemplo7();
 
-//Ejercicio 8: Mas bucles, solicita numero y muestra el acumulado de 10 en 10.
+//Ejemplo 8: Mas bucles, solicita numero y muestra el acumulado de 10 en 10.
 function suma_diez(num_vueltas){
     let result = 0;
 
@@ -105,7 +105,7 @@ function ejemplo8(){
 
 //ejemplo 8();
 
-//Ejercicio 9: Mas bucles, solicita numero y muestra el acumulado de 10 en 10. Da
+//Ejemplo 9: Mas bucles, solicita numero y muestra el acumulado de 10 en 10. Da
 // error si introduces un numero negativo
 function suma_diez_v2(num_vueltas){
     let result = 0;
@@ -123,7 +123,10 @@ function suma_diez_v2(num_vueltas){
 }
 
 function ejemplo9(){
-    console.log("Ejercicio 8: " + suma_diez(-7));
+    console.log("Ejercicio 8: " + suma_diez_v2(-7));
 }
 
 ejemplo9();
+
+//Ejemplo 10: Calculadora. Pide dos numeros y muestra un menu para que los
+//sume, reste, multiplique o divida segun la opción marcada. Valida los datos.
