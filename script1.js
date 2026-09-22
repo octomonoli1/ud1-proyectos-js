@@ -121,3 +121,9 @@ function suma_diez_v2(num_vueltas){
 
     return result;
 }
+
+function ejemplo9(){
+    console.log("Ejercicio 8: " + suma_diez(-7));
+}
+
+ejemplo9();
