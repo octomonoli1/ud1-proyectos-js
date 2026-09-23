@@ -184,4 +184,69 @@ function calculadora(){
 
 }
 
-calculadora();
+//calculadora();
+
+//Ejemplo 11: ternario
+
+function ejemplo11(){
+    let precio = 150;
+    console.log("Precio original: " + precio);
+
+    let edad = parseInt(window.prompt("Introduce tu edad"));
+
+    // if(edad >= 18){
+    //     precio = precio*0.80;
+    // }else{
+    //     precio = precio*0.75;
+    // }
+
+    precio = (edad >= 18) ? precio*0.80 : precio*0.75;
+    console.log("El precio tras el descuento es: " + precio);
+}
+
+//ejemplo11();
+
+//Ejemplo 12: Pide el precio del producto por pantalla. Si es superior a 50 euros
+//el envio sale gratis. Si no 5€. El sistema debe mostrar al ppio el precio original
+//y al final el precio total
+function ejemplo12(){
+    let precio = parseInt(window.prompt("Introduce el precio: "));
+    console.log("El precio original es: " + precio);
+
+    precio = (precio > 50)? precio: precio+5;
+    console.log("El precio final es: " + precio);
+}
+
+ejemplo12();
+
+//Ejemplo 13: Crea un programa que calcule un número aleatorio y pida al usuario 
+// números hasta que lo acierte. Al finalizar, si el numero de intentos es superior
+//a 10 pintará por pantalla ¡has perdido! y ¡has ganado! si es inferior.
+
+function ejemplo13(){
+    let num_aleat = Math.floor(Math.random()*100 + 1); 
+    //Temporalmente pinto el resultado para ayudarme a testear la app
+    console.log(num_aleat);
+    let num_juego;
+    let intentos = 0;
+
+    do{
+        num_juego = parseInt(window.prompt("Acierta el numero: "));
+        intentos++;
+    }while(num_juego != num_aleat);
+
+    let texto_final = (intentos>10)? "¡has perdido!": "¡has ganado!";
+    console.log(texto_final + " con " + intentos + " intentos");
+}
+
+ejemplo13();
+
+
+
+
+
+
+
+
+
+
