@@ -345,9 +345,38 @@ function ejemplo18(){
     console.log("El numero invertido es: " + num_inv);
 }
 
-ejemplo18();
+//ejemplo18();
 
 //Ejemplo 19: Muestra todos los divisores de un numero solicitado por pantalla
+function ejemplo19(){
+    const num = parseInt(window.prompt("Introduce un numero"));
+
+    for(let i = 0; i <= num; i++){
+        if(num % i == 0){
+            console.log(i);
+        }
+    }
+}
+
+//ejemplo19();
 
 //Ejemplo 20: Numero perfecto: Pide un número y determina si es perfecto. Un
 // número es perfecto cuando la suma de sus divisores propios sea igual al propio num.
+function ejemplo20(){
+
+    const num = parseInt(window.prompt("Introduce un numero"));
+    let acum = 0;
+    for(let i = 0; i < num; i++){
+        if(num % i == 0){
+            acum += i;
+        }
+    }
+
+    if(acum == num){
+        console.log(`El numero ${num} es perfecto`);
+    }else{
+        console.log(`El numero ${num} no es perfecto`);
+    }
+}
+
+ejemplo20();
