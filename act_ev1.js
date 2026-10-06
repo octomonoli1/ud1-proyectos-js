@@ -4,7 +4,6 @@ let gasto_mayor = -Infinity;
 let gasto_menor = Infinity;
 
 do{
-    
     //Introducción de valores
     let precio = 0;
     do{
@@ -30,7 +29,6 @@ do{
     gasto_total += importe_iva;
     gasto_mayor = (importe_iva > gasto_mayor)? importe_iva : gasto_mayor;
     gasto_menor = (importe_iva < gasto_menor)? importe_iva : gasto_menor;
-
 
 }while(window.confirm("¿Desea continuar?"));
 
