@@ -16,9 +16,7 @@ window.open("https://example.com");
 window.close();
 
 //Ejecuta una función después de un tiempo determinado
-window.setTimeout(() => {
-    console.log("Han pasado 2 segundos");
-}, 2000);
+window.setTimeout(() => console.log("Han pasado 2 segundos"), 2000);
 
 //Ejecuta una función repetidamente cada cierto intervalo.
 window.setInterval(() => {
