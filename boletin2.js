@@ -1,67 +1,96 @@
-//Funciones del BOM
+//Ejercicio 1
+// Introduce por teclado un numero de segundos.
+// Introduce por teclado un mensaje.
+// Dicho mensaje debe aparecer por alert transcurrido esos segundos
+function ejercicio1(){
+    const segundos = parseInt(window.prompt("Introduce el numero de segundos"));
+    const mensaje = window.prompt("Introduce un mensaje");
+    setTimeout(()=>window.alert(mensaje), segundos*1000);
+}
 
-// Muestra una ventana de alerta.
-window.alert("Hola");  
+//ejercicio1();
 
-//Muestra un mensaje con botones Aceptar/Cancelar y devuelve true o false.
-const respuesta = window.confirm("¿Continuar?"); 
+//Ejercicio 2
+//Modifica el ejercicio anterior para que mientras muestra el 
+// mensaje se muestre por consola la cuenta atrás antes de 
+// pintarse el mensaje
+//setInterval() + clearInterval().
+function ejercicio2(){
+    const segundos = parseInt(window.prompt("Introduce el numero de segundos"));
+    const mensaje = window.prompt("Introduce un mensaje");
+    let contador = segundos;
+    
+    const interval = setInterval(()=> {
+        console.log(contador);
+        contador--;
+    }, 1000);
 
-//Solicita al usuario que introduzca un texto.
-const nombre = window.prompt("¿Cómo te llamas?");
+    setTimeout(()=>{
+        window.alert(mensaje);
+        clearInterval(interval);
+    }, segundos*1000);
+}
 
-// Abre una nueva ventana o pestaña.
-window.open("https://example.com");
+//ejercicio2();
 
-//Cierra la ventana actual, cuando el navegador lo permite.
-window.close();
+//Ejercicio 3
+// Pide por pormpt una URL y redirige la página a la misma
+function ejercicio3(){
+    window.location.href = window.prompt("Introduce una URL");
+    //window.location.assign(window.prompt("Introduce una URL"));
+}
 
-//Ejecuta una función después de un tiempo determinado
-window.setTimeout(() => console.log("Han pasado 2 segundos"), 2000);
+//ejercicio3();
 
-//Ejecuta una función repetidamente cada cierto intervalo.
-window.setInterval(() => {
-    console.log("Hola");
-}, 1000);
+//Ejercicio 4
+//Muestra un menú con varias opciones. 
+//a. Ir atrás
+//b. Ir hacia adelante
+//c. Ir a una dirección (entonces la solicitará)
+//d. Mostrar la dirección actual
+//e. Actualizar página
+//f. No hacer nada. Salir
+function ejercicio4(){
+    const opt = window.prompt("Introduce una opción: \n"
+        + "a. Ir atrás \n"
+        + "b. Ir hacia adelante \n"
+        + "c. Ir a una dirección \n"
+        + "d. Mostrar la dirección actual \n"
+        + "e. Actualizar página \n"
+        + "f. No hacer nada. Salir \n");
 
-//Permite obtener o cambiar la url
-console.log(window.location.href);
-window.location.href = "https://example.com";
+    switch(opt){
+        case 'a':
+            window.history.back();
+            //window.history.go(-1);
+            break;
+        case 'b':
+            window.history.forward();
+            //window.history.go(1);
+            break;
+        case 'c':
+            ejercicio3();
+            break;
+        case 'd':
+            console.log(window.location.href);
+            break;
+        case 'e':
+            window.location.reload();
+            break;
+        case 'f':
+            break;
+        default:
+            console.error("Introduce un valor correcto");
+            break;
+    }
+}
 
-//Actualizar (F5)
-window.location.reload();
+ejercicio4();
 
-//Vuelve a la pagina anterior o anteriores
-window.history.back();
-window.history.go(-2);
+//Ejercicio 5
+//Al cargar la pagina consulta el nombre de usuario (username) 
+// almacenado en el localStorage. Si existe saluda, si no lo pide.
 
-//Avanza o retrocede varias páginas.
-window.history.forward();
-window.history.go(2);
-
-//Almacenamiento local
-window.localStorage.setItem("nombre", "Carlos");
-const item = window.localStorage.getItem("nombre");
-window.localStorage.removeItem("nombre");
-window.localStorage.clear();
-
-//info navegador
-console.log(window.navigator.userAgent);
-
-//Tamaño de la ventana
-console.log(window.innerWidth);
-console.log(window.innerHeight);
-
-//Modelo de objetos del documento
-window.document
-window.document.getElementById("titulo");
-
-
-//Propiedades del BOM
-window.innerWidth      // Ancho de la ventana
-window.innerHeight     // Alto de la ventana
-window.location        // URL actual
-window.history         // Historial de navegación
-window.navigator       // Información sobre el navegador
-window.document        // Documento HTML (DOM)
-window.localStorage    // Almacenamiento local
-window.sessionStorage  // Almacenamiento de sesión
+//Ejercicio 6
+//Contador de recargas. Cada vez que el usuario abra la página,
+//acceda o actualice debe incrementar el numero de visitas.
