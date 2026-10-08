@@ -1,6 +1,0 @@
-function suma(callback,b){
-    return (callback)+b;
-}
-
-//(5*4)+8
-let resultado = suma((a,b)=>a*b,8);
