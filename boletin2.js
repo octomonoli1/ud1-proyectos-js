@@ -40,6 +40,8 @@ function ejercicio3(){
     //window.location.assign(window.prompt("Introduce una URL"));
 }
 
+document.getElementById("info").textContent = "HOLA"
+document.body.style.backgroundColor = "red"
 //ejercicio3();
 
 //Ejercicio 4

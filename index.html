@@ -5,8 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!--<script src="script1.js" defer> </script>-->
-    <script src="boletin2.js" defer> </script>
+    <script src="act_ev2.js" defer> </script>
 </head>
-<body>
+<body id="todo">
+    <h2>Ejercicio 1: Información del navegador</h2>
+    <ul>
+        <li>URL actual pagina: <span id="url"></span></li>
+        <li>Información del navegador: <span id="info"></span></li>
+        <li>Ancho y alto disponible: <span id="tam"></span></li>
+        <li>Idioma del navegador: <span id="idioma"></span></li>
+    </ul>
+
+    <h2>Ejercicio 2</h2>
+    <button onclick="mostrar_dimensiones()" >Mostrar dimensiones</button>
+
+    <h2>Ejercicio 3</h2>
+    <button onclick="volver()" >Volver a página anterior</button>
+    <button onclick="recargar()" >Refrescar página</button>
+
+    <h2>Ejercicio 4: Temporizador</h2>
+    <button onclick="iniciar()"> Iniciar contador </button>
+    <button onclick="detener()"> Detener contador </button>
+    <span id="contador"></span>
+
+    <h2>Ejercicio 5. Ventana emergente</h2>
+    <button onclick="abrir_ventana()" >Abrir ventana</button>
+    <button onclick="cerrar_ventana()" >Cerrar ventana</button>
+
+    <h2>Ejercicio 6. Confirmación y entrada de datos</h2>
+    <button onclick="cambiar_fondo()" >Cambiar fondo</button>
+
+    <h2>Ejercicio 7. Información mediante cuadros de diálogo</h2>
+    <button onclick="solicita_info()">Mostrar info</button>
+
+    <h2>Ejercicio 8. Control del tamaño de la ventana </h2>
+    <button onclick="comprueba_tam()">Comprobar tamaño</button>
+
+
 </body>
 </html>
