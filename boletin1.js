@@ -339,4 +339,41 @@ function ingresar_dinero(saldo, ingresar){
 
 }
 
-ejercicio32();
+//ejercicio32();
+
+function ejercicio33(){
+    const num_aleat = genera_aleatorio(1,100);
+    console.log(num_aleat);
+    let intentos = 0;
+    let num;
+    do{
+        do{
+            num = parseInt(window.prompt("Introduce un numero"));
+        }while(validaEntrada(num));
+        intentos++;
+        console.log(`El valor introducido es ${(num<num_aleat) ? "Menor" : "Mayor"}`)
+    }while(num_aleat != num);
+    
+    console.log(`Fin del juego! Has realizado ${intentos} intentos`)
+}
+
+function genera_aleatorio(min, max){
+    return Math.floor((Math.random() * max)) + min
+}
+
+function validaEntrada(num){
+    let ok = false;
+    if(isNaN(num)){
+        console.log("Debe ser un numero valido");
+        ok = false;
+    }else if(num <= 0 || num > 100){
+        console.log("Debe ser un numero entre 1 y 100");
+        ok = false;
+    }else{
+        ok = true;
+    }
+
+    return ok;
+}
+
+ejercicio33();
