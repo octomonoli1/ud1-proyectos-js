@@ -229,3 +229,114 @@ function saluda(nombre){
 }
 
 //ejercicio20();
+
+//Ejercicio 31: Sistema de calificaciones
+function ejercicio31(){
+    let num_notas = parseInt(window.prompt("Introduce el numero de notas"));
+    let acum_notas = 0;
+
+    for(let i = 1 ; i <= num_notas; i++){
+        let nota = parseFloat(window.prompt(`Introduce la nota ${i}`));
+        acum_notas += nota;
+    }
+
+    const nota_final = acum_notas/num_notas;
+    console.log(`Tu nota final es ${nota_final} ${calificacion_final(nota_final)}`);
+
+}
+
+function calificacion_final(nota){
+    let result;
+    switch(true){
+        case nota >= 0 && nota < 5:
+            result = "SUSPENSO";
+            break;
+        case nota >= 5 && nota < 6:
+            result = "APROBADO";
+            break;
+        case nota >= 6 && nota < 7:
+            result = "BIEN";
+            break;
+        case nota >= 7 && nota < 9:
+            result = "NOTABLE";
+            break;
+        case nota >= 0 && nota < 5:
+            result = "SORESALIENTE";
+            break;
+        default:
+            result = "NOTA NO VALIDA";
+            break;
+    }
+
+    return result;
+}
+
+//ejercicio31();
+
+function ejercicio32(){
+    let saldo = 1000.0;
+    let opc;
+    do{
+        opc = parseInt(window.prompt("Introduce una opción: \n"
+            + "1. Consulta tu saldo\n"
+            + "2. Retirar dinero\n"
+            + "3. Ingresar dinero\n"
+            + "4. Salir"));
+
+        switch(opc){
+            case 1: 
+                console.log(`Su saldo actual es ${saldo}`)
+                break;
+            case 2: 
+                const retirar = parseFloat(window.prompt("Cuanto vas a retirar"));
+                saldo = retirar_dinero(saldo, retirar);
+                break;
+            case 3: 
+                const ingresar = parseFloat(window.prompt("Cuanto vas a ingresar"));
+                saldo = ingresar_dinero(saldo, ingresar);
+                break;
+            case 4: 
+                console.log("Gracias por utilizar nuestro cajero");
+                break;
+            default:
+                console.error("Debe introducir una opc correcta");
+                break;
+        }
+    }while(opc != 4);
+}
+
+function retirar_dinero(saldo, retirar){
+
+    let result = saldo; 
+
+    if(saldo < retirar){
+        console.log("No se puede retirar mas dinero del que hay");
+    }else if(retirar <= 0){
+        console.log("Debes retirar una cantidad positiva");
+    }else if(isNaN(retirar)){
+        console.log("Debes introducir una cantidad valida");
+    }else{
+        result = saldo - retirar;
+    }
+
+    return result;
+
+}
+
+function ingresar_dinero(saldo, ingresar){
+
+    let result = saldo; 
+
+    if(ingresar <= 0){
+        console.log("Debes ingresar una cantidad positiva");
+    }else if(isNaN(ingresar)){
+        console.log("Debes introducir una cantidad valida");
+    }else{
+        result = saldo + ingresar;
+    }
+
+    return result;
+
+}
+
+ejercicio32();

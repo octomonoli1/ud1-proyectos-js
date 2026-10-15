@@ -40,8 +40,6 @@ function ejercicio3(){
     //window.location.assign(window.prompt("Introduce una URL"));
 }
 
-document.getElementById("info").textContent = "HOLA"
-document.body.style.backgroundColor = "red"
 //ejercicio3();
 
 //Ejercicio 4
@@ -87,12 +85,39 @@ function ejercicio4(){
     }
 }
 
-ejercicio4();
+//ejercicio4();
 
 //Ejercicio 5
 //Al cargar la pagina consulta el nombre de usuario (username) 
 // almacenado en el localStorage. Si existe saluda, si no lo pide.
+function ejercicio5(){
+    let nombre = window.localStorage.getItem("username");
+
+    if(!nombre){
+        nombre = window.prompt("Introduce tu nombre");
+    }
+
+    console.log(`Hola: ${nombre}`);
+    window.localStorage.setItem("username", nombre);
+}
+
+function vaciarLocalStorage(){
+    window.localStorage.clear();
+}
 
 //Ejercicio 6
 //Contador de recargas. Cada vez que el usuario abra la página,
-//acceda o actualice debe incrementar el numero de visitas.
+//acceda o actualice debe incrementar el numero de visitas y mostrarlo
+// por pantalla.
+function ejercicio6(){
+    let visitas = window.localStorage.getItem("visitas");
+    let contador = visitas != null? parseInt(visitas) : 0;
+    contador++;
+    //Si la clave visitas no existe en localStorage la crea con valor contador
+    //Si existe, modifica su valor a contador
+    window.localStorage.setItem("visitas",contador);
+    document.getElementById("visitas").textContent = contador;
+    console.log(contador);
+}
+
+ejercicio6();
